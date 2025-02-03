@@ -1,0 +1,187 @@
+.lato-thin {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: "Lato",sans-serif;
+}
+
+.header,
+.main{
+    max-width: 40rem;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+/*flex-direction will have the value of 'row' by default*/
+.header{
+    display: flex;
+    background-color: #000;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px 6px 0 0;
+}
+
+.header__link{
+    text-decoration: none;
+    color: inherit;
+    /*Makes the color change with a slight delay upon moving the cursor over the link*/
+    transition: color 0.1s ease-in-out;
+}
+
+.header__link:hover{
+    color: #f9dba0;
+}
+
+.header__logo{
+    margin: 0;
+    size: 1.5rem;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+}
+
+.form__input{
+    /*Prevents resizing of the textarea*/
+    resize: none;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 3px solid black;
+    border-radius: 6px;
+    background-color: #fafafa;
+}
+
+.form__button{
+    font-size: inherit;
+    /*aligns the button to the rightmost side of the container (in this case, section), which is the end of the container; default value is stretch*/
+    align-self: flex-end;
+    padding: 0.5rem 2.5rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #f9dba0;
+    transition: 0.1s;
+}
+
+.form__button:hover{
+    cursor: pointer;
+    background-color: #ffbe33;
+}
+
+.dates{
+    display: flex;
+    justify-content: space-around;
+    color: #000;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+.dates__link{
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    transition: 0.1s;
+}
+
+.dates__link--current{
+    background-color: #f9dba0;
+}
+
+.dates__link:not(.dates__link--current):hover{
+    background-color: #ababab;
+}
+
+.date{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Makes the last and second last dates from either side disappear*/
+.dates__link:first-of-type,
+.dates__link:last-of-type,
+.dates__link:nth-of-type(2),
+.dates__link:nth-last-of-type(2){
+    display: none;
+}
+
+/*The second last elements from either side only remain visible as long as screen size is 25rem or more*/
+@media screen and (min-width: 25rem) {
+    .dates__link:nth-of-type(2),
+    .dates__link:nth-last-of-type(2){
+    display: block;
+}
+    
+}
+
+/*The last elements from either side only remain visible as long as screen size is 35rem or more*/
+@media screen and (min-width: 35rem) {
+    .dates__link:first-of-type,
+    .dates__link:last-of-type{
+        display: block;
+    }
+    
+}
+
+.habit{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff2d8;
+    font-size: 26px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 6px;
+}
+
+.habit:not(.completed){
+    padding: 0;
+    transition: 0.1s;
+}
+
+.habit.habit:not(.completed):hover{
+    background-color: #e9cd87;
+}
+
+.habit__icon{
+    width: 1em;
+    height: 1em;
+}
+
+.habit__name{
+    margin: 0;
+}
+
+.habit__form{
+    width: 100%;
+}
+
+.habit__button{
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: unset;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}

@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% block main_content %}
+<form class="form" method="POST">
+    <!--The name attribute is used to access the form value by flask in the backend-->
+    <!--'rows' determine the textarea's height in terms of number of rows; this one is 3 rows high-->
+    <textarea class="form__input" id="habit" name="habit" rows="3" placeholder="Add a new habit"></textarea>
+    <button class="form__button" type="submit">Add</button>
+</form>
+{% endblock %}
